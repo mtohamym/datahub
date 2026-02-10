@@ -1,16 +1,26 @@
-# datahub
+# DataHub
 
-A new Flutter project.
+Flutter web app to extract PDF pages that contain tables. Upload a PDF, review pages one by one, select pages with tables, and export them as numbered JPEG images in a ZIP file — all client-side, no server.
 
-## Getting Started
+## Run locally
 
-This project is a starting point for a Flutter application.
+```bash
+flutter pub get
+flutter run -d chrome
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Build for web
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+flutter build web --base-href /datahub/
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## GitHub Pages (live site)
+
+The repo is set up to deploy the web build to **GitHub Pages** via GitHub Actions.
+
+1. **Enable Pages:** In the repo go to **Settings → Pages**. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+2. **Push to `main`:** Each push to `main` runs the workflow, builds the Flutter web app, and deploys it.
+3. **Site URL:** https://mtohamym.github.io/datahub/
+
+The workflow file is [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml).
